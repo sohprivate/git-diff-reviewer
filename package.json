@@ -1,0 +1,29 @@
+{
+  "name": "git-diff-reviewer",
+  "version": "1.0.0",
+  "description": "CLI tool to analyze git diffs and generate PR comments using AI",
+  "main": "dist/index.js",
+  "bin": {
+    "git-diff-reviewer": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "prepare": "npm run build"
+  },
+  "keywords": ["git", "diff", "review", "ai", "cli"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "chalk": "^4.1.2",
+    "simple-git": "^3.20.0",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.0",
+    "typescript": "^5.2.0",
+    "ts-node": "^10.9.0"
+  }
+}
