@@ -97,4 +97,4 @@ npm run dev -- analyze --help
 
 ## ライセンス
 
-MITtest change
+MIT
