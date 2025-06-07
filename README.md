@@ -11,11 +11,31 @@ GitのdiffをAIで分析し、Pull Request用のレビューコメントを自�
 
 ## インストール
 
+### ローカルインストール（プロジェクト内でのみ使用）
+
 ```bash
+git clone https://github.com/sohprivate/git-diff-reviewer.git
 cd git-diff-reviewer
 npm install
 npm run build
-npm link
+
+# プロジェクト内でのみ使用可能
+npm start -- analyze
+```
+
+### グローバルインストール（どこでも使用可能）
+
+```bash
+git clone https://github.com/sohprivate/git-diff-reviewer.git
+cd git-diff-reviewer
+npm install
+npm run build
+
+# システム全体にインストール
+npm install -g .
+
+# これで任意のディレクトリで使用可能
+git-diff-reviewer analyze
 ```
 
 ## セットアップ
@@ -23,10 +43,18 @@ npm link
 OpenAI APIキーが必要です：
 
 ```bash
-# 環境変数に設定
+# 環境変数に設定（推奨）
 export OPENAI_API_KEY="your-api-key-here"
 
-# または設定方法を確認
+# macOS/Linuxで永続的に設定する場合
+echo 'export OPENAI_API_KEY="your-api-key-here"' >> ~/.bashrc
+source ~/.bashrc
+
+# または ~/.zshrc を使用している場合
+echo 'export OPENAI_API_KEY="your-api-key-here"' >> ~/.zshrc
+source ~/.zshrc
+
+# 設定方法を確認
 git-diff-reviewer setup
 ```
 
